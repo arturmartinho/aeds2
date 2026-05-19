@@ -417,12 +417,11 @@ int main()
         i++;
     }
 
-    FILE *log = fopen("856245_insercao_parcial.txt", "w");
+    FILE *log = fopen("1593221_insercao_parcial.txt", "w");
 
-    fprintf(log,"856245\t%ld\t%ld\t%lf",comparacoes,movimentacoes,tempo);
+    fprintf(log,"1593221\t%ld\t%ld\t%lf",comparacoes,movimentacoes,tempo);
 
     fclose(log);
 
     return 0;
 }
-// Felipe de Faria Rios Coelho
