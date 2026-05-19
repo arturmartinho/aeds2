@@ -258,10 +258,9 @@ public class ArvoreBinariaRes {
         arvore.mostrarEmOrdem();
 
         long fim = System.currentTimeMillis();
-        FileWriter log = new FileWriter("856245_arvore_binaria.txt");
-        log.write("856245\t" + arvore.comparacoes + "\t" + (fim - inicio));
+        FileWriter log = new FileWriter("1593221_arvore_binaria.txt");
+        log.write("1593221\t" + arvore.comparacoes + "\t" + (fim - inicio));
         log.close();
         sc.close();
     }
 }
-//Felipe de Faria Rios Coelho
