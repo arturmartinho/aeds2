@@ -378,11 +378,10 @@ int main()
     FILE *log = fopen("1593221_arvore_binaria.txt", "w");
     if (log)
     {
-        fprintf(log, "1293221\t%ld\t0", arvore.comparacoes);
+        fprintf(log, "1593221\t%ld\t0", arvore.comparacoes);
         fclose(log);
     }
 
     deletarArvore(arvore.raiz);
     return 0;
 }
-// Felipe de Faria Rios Coelho
