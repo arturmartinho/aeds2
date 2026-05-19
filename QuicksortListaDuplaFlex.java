@@ -562,9 +562,9 @@ public class QuicksortListaDuplaFlex {
 
         double tempo = (fim - inicio) / 1000.0;
 
-        PrintWriter log = new PrintWriter(new FileWriter("856245_quicksort.txt"));
+        PrintWriter log = new PrintWriter(new FileWriter("1593221_quicksort.txt"));
 
-        log.println("856245\t" + comparacoes + "\t" + movimentacoes + "\t" + tempo);
+        log.println("1593221\t" + comparacoes + "\t" + movimentacoes + "\t" + tempo);
 
         log.close();
 
