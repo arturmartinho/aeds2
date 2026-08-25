@@ -1,0 +1,28 @@
+public class Anagrama {
+    public static boolean isAnagrama(String s1, String s2) {
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+        int[] cont = new int[256];
+        for (int i = 0; i < s1.length(); i++) {
+            cont[s1.charAt(i)]++;
+            cont[s2.charAt(i)]--;
+        }
+        for (int i = 0; i < 256; i++) {
+            if (cont[i] != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        MyIO.setCharset("UTF-8");
+        String s1 = MyIO.readLine();
+        while (!s1.equals("FIM")) {
+            String s2 = MyIO.readLine();
+            MyIO.println(isAnagrama(s1, s2) ? "SIM" : "NAO");
+            s1 = MyIO.readLine();
+        }
+    }
+}
