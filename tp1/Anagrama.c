@@ -2,6 +2,14 @@
 #include <string.h>
 #include <stdbool.h>
 
+void limparLinha(char *s) {
+    int len = strlen(s);
+    while (len > 0 && (s[len - 1] == '\n' || s[len - 1] == '\r')) {
+        s[len - 1] = '\0';
+        len--;
+    }
+}
+
 bool isAnagrama(const char *s1, const char *s2) {
     if (strlen(s1) != strlen(s2)) {
         return false;
@@ -28,14 +36,14 @@ int main() {
     char s1[1000], s2[1000];
 
     while (fgets(s1, sizeof(s1), stdin) != NULL) {
-        s1[strcspn(s1, "\n")] = '\0';
+        limparLinha(s1);
 
         if (strcmp(s1, "FIM") == 0) {
             break;
         }
 
         fgets(s2, sizeof(s2), stdin);
-        s2[strcspn(s2, "\n")] = '\0';
+        limparLinha(s2);
 
         printf("%s\n", isAnagrama(s1, s2) ? "SIM" : "NAO");
     }
