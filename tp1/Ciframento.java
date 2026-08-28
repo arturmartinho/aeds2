@@ -16,8 +16,22 @@ public class Ciframento {
     public static void main(String[] args) {
         MyIO.setCharset("UTF-8");
         String linha = MyIO.readLine();
-        while (!linha.equals("FIM")) {
-            MyIO.println(cifrar(linha));
+        while (linha != null && !linha.equals("FIM")) {
+            if (linha.matches("\\d+")) {
+                linha = MyIO.readLine();
+                continue;
+            }
+
+            String[] partes = linha.split(" ", 2);
+            if (partes.length == 2 && partes[0].matches("\\d+")) {
+                String texto = partes[1];
+                if (texto != null && !texto.trim().isEmpty()) {
+                    MyIO.println(cifrar(texto));
+                }
+            } else {
+                MyIO.println(cifrar(linha));
+            }
+            
             linha = MyIO.readLine();
         }
     }
